@@ -1,0 +1,12 @@
+- import de.esserjan.com.catalog.ui.CatalogUiSupport.Product
+- import de.esserjan.com.sol.ui.SolUiSupport.Offer
+-@ val product:Product
+-@ val offers:Seq[Offer]
+
+%h3
+    #{messages("offersFor")} #{product.name}
+
+%ul
+    - for (offer <- offers)
+        %li
+            #{offer.price} #{offer.currencySymbol}

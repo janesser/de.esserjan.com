@@ -1,0 +1,28 @@
+- import de.esserjan.com.catalog.ui.CatalogUiSupport.Category
+- import de.esserjan.com.catalog.ui.CatalogUiSupport.Product
+-@ val parentCategory:Option[Category]
+-@ val category:Category
+-@ val subCategories:Iterable[Category]
+-@ val products:Iterable[Product]
+
+%h1 #{category.name}
+- parentCategory match
+    - case Some(parent) =>
+        %h2 #{messages("parentCategory")}
+        %a(href="c#{parent.id}") #{parent.name}
+    - case None =>
+        / no parent category
+
+%h2 #{messages("subCategories")}
+
+%ul
+    - for (subCategory <- subCategories)
+        %li
+            %a(href="c#{subCategory.id}") #{subCategory.name}
+
+%h2 #{messages("products")}
+
+%ul
+    - for (product <- products)
+        %li
+            %a(href="p#{product.id}") #{product.name}

@@ -1,0 +1,11 @@
+-@ val title:String
+-@ val extraHeaders:String = ""
+-@ val body:String
+%html
+  %head
+    %title = title
+    %link(rel="stylesheet" href="/css/bootstrap.min.css")
+    != extraHeaders
+  %body
+    != body
+    %script(data-main="/js/main.js" src="/js/require.js")

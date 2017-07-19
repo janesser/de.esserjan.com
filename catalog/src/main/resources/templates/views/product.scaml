@@ -1,0 +1,15 @@
+- import de.esserjan.com.catalog.ui.CatalogUiSupport.Category
+- import de.esserjan.com.catalog.ui.CatalogUiSupport.Product
+-@ val parentCategory:Option[Category]
+-@ val product:Product
+
+- parentCategory match
+    - case Some(category) =>
+        %a(href="c#{category.id}") #{category.name}
+    - case None =>
+        / no parent category
+
+%h1 #{product.name}
+
+%iframe(src="/sol/offers/#{product.id}")
+    / offers

@@ -1,0 +1,11 @@
+- import de.esserjan.com.catalog.ui.CatalogUiSupport.Category
+-@ val rootCategories:List[Category]
+
+%h1 #{messages("welcome")}
+
+%h2 #{messages("rootCategories")}
+
+%ul
+    - for (c <- rootCategories)
+        %li
+            %a(href="c#{c.id}") #{c.name}

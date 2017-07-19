@@ -1,0 +1,10 @@
+- import de.esserjan.com.catalog.ui.CatalogUiSupport.Product
+- import de.esserjan.com.sol.ui.SolUiSupport.Offer
+-@ val product:Product
+-@ val bestOffer:Offer
+
+%h3
+    #{messages("bestOfferFor")} #{product.name}
+
+%p
+    #{bestOffer.price} #{bestOffer.currencySymbol}
